@@ -171,8 +171,8 @@ namespace ArmUsb {
                                     //Start Reading packet
                                     #region Display Raw Data
                                     txtReceived.Text = received + txtReceived.Text;
-                                    ////////////////   ### is being matched on the arduino, both sides expect this key
-                                    //Parsing code//   ###,packetId,A0,A1,A2,A3,A4,A5
+                                    ////////////////   ### is being matched on the arm, both sides expect this key
+                                    //Parsing code//   ###,packetId,Xaccel,Yaccel,Zaccel,A3,A4,A5,inputs,blueButton,CheckSum
                                     ////////////////                                
                                     txtPacketNum.Text = received.Substring(3, 3);   // 3 is where packet num start and it is 3 long] 0,1,2 are ###
                                     txtXaccel.Text = received.Substring(6, 4);         //Start at 6, 4 long] Analog 0
@@ -183,7 +183,7 @@ namespace ArmUsb {
                                     txtAN3.Text = received.Substring(26, 4);        //Start at 26, 4 long] Analog 0
                                     txtBinOut.Text = received.Substring(30, 8);     //8 bit binary inputs
                                     txtBluBtn.Text = received.Substring(38, 1);     //1 bit blue button state
-                                    txtChkSum.Text = received.Substring(38, 3);     //Check Sum
+                                    txtChkSum.Text = received.Substring(39, 3);     //Check Sum
                                     #endregion
 
 
